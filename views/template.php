@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,39 +11,35 @@
 <body>
 
   <?php
-  if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok")
-    {     
-      require "modules/navbar.php";
-      require "modules/menu.php";
+  if (isset($_SESSION["login"]) && $_SESSION["login"] == "ok") {
+    require "modules/navbar.php";
+    require "modules/menu.php";
 
-      if(isset($_GET["route"]))
-      {
-        if(
-          $_GET["route"] == "home" || 
-          $_GET["route"] == "signout"
-        )
-        {
-          include "modules/".$_GET["route"].".php";
-        }
-        else
-        {
-          include "web/404.html";
-        }
+    if (isset($_GET["route"])) {
+      if (
+        $_GET["route"] == "home" ||
+        $_GET["route"] == "allArticles" ||
+        $_GET["route"] == "companies" ||
+        $_GET["route"] == "contactus" ||
+        $_GET["route"] == "events" ||
+        $_GET["route"] == "suscribers" ||
+        $_GET["route"] == "signout"
+      ) {
+        include "modules/" . $_GET["route"] . ".php";
+      } else {
+        include "web/404.html";
       }
-      else
-      {
-        include "modules/home.php";
-      }
-      echo '<footer>';
-      include "modules/footer.php";
-      echo '</footer>';
-      echo '</div>';
-      echo '</div>';
+    } else {
+      include "modules/home.php";
     }
-    else
-    {
-      include "modules/login.php";
-    }
+    echo '<footer>';
+    include "modules/footer.php";
+    echo '</footer>';
+    echo '</div>';
+    echo '</div>';
+  } else {
+    include "modules/login.php";
+  }
 
   ?>
 
@@ -58,7 +54,12 @@
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <!-- Template Main JS File -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script src="assets/js/main.js"></script>
+
+  <script src="views/js/companies.js"></script>
 
 
 </body>

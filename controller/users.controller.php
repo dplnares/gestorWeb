@@ -17,7 +17,8 @@ class ControllerUsers
         $_SESSION["login"] = "ok";
         $_SESSION["UserId"] = $userData["IdUser"];
         $_SESSION["userType"] = $userData["IdUserType"];
-        $_SESSION["userFirstName"] = $userData["Username"];
+        $_SESSION["userName"] = $userData["Username"];
+        $_SESSION["userFullName"] = $userData["UserFullName"];
 
         //  Save last login
         $lastLogin = date("Y-m-d\TH:i:sP");

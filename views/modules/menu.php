@@ -4,7 +4,7 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link " href="home">
+      <a class="nav-link" href="home">
         <i class="bi bi-grid"></i>
         <span>Inicio</span>
       </a>
@@ -47,7 +47,7 @@
       </a>
       <ul id="allArticles" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="articles">
+          <a href="allArticles">
             <i class="bi bi-circle"></i><span>Todas las Noticias</span>
           </a>
         </li>
